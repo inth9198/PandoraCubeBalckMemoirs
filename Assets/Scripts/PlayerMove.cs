@@ -65,6 +65,7 @@ public class PlayerMove : MonoBehaviour
     {
         float closestDistance = Mathf.Infinity;
         GameObject closestEnemy;
+        if (enemyList.Count == 0) return;
         closestEnemy = enemyList[0];
         foreach (GameObject col in enemyList)
         {
@@ -83,7 +84,7 @@ public class PlayerMove : MonoBehaviour
         float Ndistance = Vector3.Distance(closestEnemy.transform.position, transform.position);
         Debug.Log(Ndistance);
 
-        if (Ndistance<15.3)
+        if (Ndistance<15.1)
         {
             anim.SetTrigger("Attack");
             dir = new Vector2(0, 0);
